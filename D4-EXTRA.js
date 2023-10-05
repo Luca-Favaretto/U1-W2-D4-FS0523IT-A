@@ -66,11 +66,15 @@ const shoppingCart = [
   }
 ];
 
-const shoppingCartTotal = function (array, numArt, numOgg) {
-  return array[numArt].price * numOgg;
+const shoppingCartTotal = function (array) {
+  let tot = 0;
+  for (let i = 0; i < array.length; i++) {
+    tot += array[i].price * array[i].quantity;
+  }
+  return tot;
 };
 
-console.log("stai spendendo" + shoppingCartTotal(shoppingCart, 2, 1) + "$");
+console.log("stai spendendo" + shoppingCartTotal(shoppingCart) + "$");
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -78,23 +82,26 @@ console.log("stai spendendo" + shoppingCartTotal(shoppingCart, 2, 1) + "$");
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 console.log("Es3");
-let shoppingCart2 = 0;
-let oggCarello = 0;
 
-const addToShoppingCart = function (array, numArt, numOgg) {
-  shoppingCart2 += array[numArt].price * numOgg;
-  oggCarello++;
-  return;
+const addToShoppingCart = function (oggetto) {
+  shoppingCart.push(oggetto);
+  let oggTot = 0;
+
+  for (let i = 0; i < shoppingCart.length; i++) {
+    oggTot += shoppingCart[i].quantity;
+  }
+
+  console.log(oggTot);
 };
-addToShoppingCart(shoppingCart, 2, 1);
-addToShoppingCart(shoppingCart, 2, 1);
+let newOgg = {
+  name: "Computer",
+  id: "123.123.123.123",
+  price: 100,
+  quantity: 4
+};
 
-console.log(shoppingCart2);
-addToShoppingCart(shoppingCart, 2, 1);
-console.log(`stai spendendo ${shoppingCart2}$`);
-console.log(`hai ${oggCarello} oggetti nel carrello`);
+addToShoppingCart(newOgg);
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -102,27 +109,95 @@ console.log(`hai ${oggCarello} oggetti nel carrello`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("Es");
+
+console.log("Es4");
+
+const maxShoppingCart = function (array) {
+  let maxPrice = 0;
+  for (let i = 0; i < shoppingCart.length; i++) {
+    if (maxPrice < array[i].price) {
+      maxPrice = array[i].price;
+      console.log("Il " + array[i].name);
+    }
+  }
+
+  return maxPrice;
+};
+let expenciveObject = maxShoppingCart(shoppingCart);
+
+console.log("è l'oggetto più costoso del carrello é " + expenciveObject);
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("Es");
+
+console.log("Es5");
+const latestShoppingCart = function (array) {
+  console.log(
+    `L'ultimo oggetto del tuo carrello è un ${array[array.length - 1].name}`
+  );
+};
+
+latestShoppingCart(shoppingCart);
+
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
  La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale non è maggiore di x per tre volte di fila.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("Es");
+
+console.log("Es6");
+let randomEx6 = Math.floor(Math.random() * 10);
+
+console.log(randomEx6);
+
+const loopUntil = function (num) {
+  for (let i = 0; i < 1; i++) {
+    let randomInside = Math.floor(Math.random() * 10);
+    if (randomInside < num) {
+      if (randomInside < num) {
+        if (randomInside < num) {
+          console.log("qunate volte ci saranno volute???");
+          return (num = randomInside);
+        } else {
+          continue;
+        }
+      } else {
+        continue;
+      }
+    } else {
+      continue;
+    }
+  }
+};
+console.log(loopUntil(randomEx6));
+
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("Es");
+console.log("Es7");
+const average = function (array) {
+  let count = 0;
+  let somma = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === "number") {
+      somma += array[i];
+      count++;
+    }
+  }
+  console.log(somma);
+  console.log(count);
+  let media = somma / count;
+  return media;
+};
+let arrayEs7 = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, "tigre"];
+
+console.log(average(arrayEs7));
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
