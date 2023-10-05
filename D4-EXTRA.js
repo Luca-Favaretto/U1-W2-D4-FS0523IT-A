@@ -150,30 +150,25 @@ latestShoppingCart(shoppingCart);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Es6");
-let randomEx6 = Math.floor(Math.random() * 10);
+// let randomEx6 = Math.floor(Math.random() * 10);
 
-console.log(randomEx6);
+// console.log("Numero casuale generato:", randomEx6);
 
-const loopUntil = function (num) {
-  for (let i = 0; i < 1; i++) {
-    let randomInside = Math.floor(Math.random() * 10);
-    if (randomInside < num) {
-      if (randomInside < num) {
-        if (randomInside < num) {
-          console.log("qunate volte ci saranno volute???");
-          return (num = randomInside);
-        } else {
-          continue;
-        }
-      } else {
-        continue;
-      }
-    } else {
-      continue;
-    }
-  }
-};
-console.log(loopUntil(randomEx6));
+// const loopUntil = function (num) {
+//   let count = 0;
+
+//   while (true) {
+//     count++;
+//     let randomInside = Math.floor(Math.random() * 10);
+//     if (randomInside >= num * 3) {
+//       // Verifica se il numero casuale è almeno tre volte maggiore
+//       console.log("Quante volte ci saranno volute???" + count);
+//       return randomInside;
+//     }
+//   }
+// };
+
+// console.log("Risultato di loopUntil:", loopUntil(randomEx6));
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
@@ -190,8 +185,8 @@ const average = function (array) {
       count++;
     }
   }
-  console.log(somma);
-  console.log(count);
+  console.log("somma" + somma);
+  console.log("counter" + count);
   let media = somma / count;
   return media;
 };
@@ -204,20 +199,53 @@ console.log(average(arrayEs7));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("Es");
+console.log("Es8");
+
+const longest = function (string) {
+  let array = [];
+  let longStringNum = 0;
+  let longString = "";
+  array = string.split(" ");
+
+  for (let i = 0; i < array.length; i++) {
+    if (longStringNum < array[i].length) {
+      longStringNum = array[i].length;
+      longString = array[i];
+    }
+  }
+  return longString;
+};
+
+let stringEs8 = "ciao sono un calciatorreeeeeeeeeeeeeeeee bravo.";
+
+console.log(longest(stringEs8));
+
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("Es");
+console.log("Es9");
+const antiSpam = function (emailContent) {
+  let bool =
+    emailContent.includes("SCAM") !== true &&
+    emailContent.includes("SPAM") !== true
+      ? true
+      : false;
+  return bool;
+};
+let string = "SCAM";
+
+console.log(antiSpam(string));
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
 console.log("Es");
+
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
  Il risultato deve essere una matrice di "x" volte "y", e i valori devono rispecchiare gli indici della posizione all'interno della matrice.
