@@ -150,25 +150,24 @@ latestShoppingCart(shoppingCart);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Es6");
-// let randomEx6 = Math.floor(Math.random() * 10);
+let randomEx6 = Math.floor(Math.random() * 10);
 
-// console.log("Numero casuale generato:", randomEx6);
+console.log("Numero casuale generato:", randomEx6);
 
-// const loopUntil = function (num) {
-//   let count = 0;
+const loopUntil = function (num) {
+  let count = 0;
 
-//   while (true) {
-//     count++;
-//     let randomInside = Math.floor(Math.random() * 10);
-//     if (randomInside >= num * 3) {
-//       // Verifica se il numero casuale è almeno tre volte maggiore
-//       console.log("Quante volte ci saranno volute???" + count);
-//       return randomInside;
-//     }
-//   }
-// };
+  while (true) {
+    count++;
+    let randomInside = Math.floor(Math.random() * 10);
+    if (randomInside > num * 3) {
+      console.log("Quante volte ci saranno volute???" + count);
+      return randomInside;
+    }
+  }
+};
 
-// console.log("Risultato di loopUntil:", loopUntil(randomEx6));
+console.log("Risultato di loopUntil:", loopUntil(randomEx6));
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
