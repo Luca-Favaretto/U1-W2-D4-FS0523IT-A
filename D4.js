@@ -170,6 +170,12 @@ console.log(upperFirst(stringEs8));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Es 9");
+const cutString = function (string) {
+  return string.slice(1, -1);
+};
+let stringEx9 =
+  "-Devo riuscire a togliere i trattini senza complicarmi la vita-";
+console.log(`Ecco a voi la stringa senza trattini "${cutString(stringEx9)}"`);
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
@@ -178,3 +184,17 @@ console.log("Es 9");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Es 10");
+console.log(Math.floor(Math.random() * 11));
+
+const giveMeRandom = function (n) {
+  let arrayRandom = [];
+
+  for (let i = 0; i < n; i++) {
+    arrayRandom.push(Math.floor(Math.random() * 11));
+  }
+  return arrayRandom;
+};
+
+let valEs10 = 10;
+let arrayRandom = giveMeRandom(valEs10);
+console.log(arrayRandom);
